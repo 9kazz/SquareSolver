@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "assert.h": "c",
+        "utest_file": "cpp"
+    },
+    "files.autoSave": "onFocusChange",
+    "files.autoSaveDelay": 1000,
+    "makefile.configureOnOpen": true
+}

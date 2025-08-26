@@ -1,0 +1,54 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe сборка активного файла",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\GCCDebug\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Задача создана отладчиком."
+        },
+        //-------------------------------------------------------------------
+        {
+            "label": "DirGCCRelease",
+            "type": "shell",
+            "windows":{
+                "command": "cmd",
+                "args": ["/C", "if not exist ${fileDirname}${config: GCCReleaseDir} mkdir ${fileDirname}${config: GCCReleaseDir}"]
+            }
+        },
+        //------------------------------------------------------------------
+        {
+            "label": "DirGCCDebug",
+            "type": "shell",
+            "windows":{
+                "command": "cmd",
+                "args": ["/C", "if not exist ${fileDirname}\\GCCDebug mkdir ${fileDirname}\\GCCDebug"]
+            } 
+        },
+        //------------------------------------------------------------------------
+        {
+            "label": "GCCDebug",
+            "dependsOn":[
+                "DirGCCDebug",
+                "C/C++: g++.exe сборка активного файла"
+            ]
+        }
+    ],
+    "version": "2.0.0"
+}
