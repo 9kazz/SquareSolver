@@ -5,11 +5,11 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <windows.h>
 
 #include "math_ops.h"
 #include "utils.h"
 
-    /*coef_input*/
 
 int terminal_input (int argc,        char* argv[],
                     double* coef_a,  double* coef_b,  double* coef_c,
@@ -146,6 +146,38 @@ int identify_oper (char* point_arg) {
     }
 }
 
+void pseudo_loading(void) {
+    #define LOADING_BAR     30
+    #define ONE_PART_TIME  100
+    
+    printf(BLUE "loading...\n" RESET);
+    printf(BLUE_BG "******************************" RESET);
+
+    for (int i = LOADING_BAR; i > 0; i--)
+        printf("\b");
+
+    for (int i = LOADING_BAR; i > 0; i--) {
+        Sleep(ONE_PART_TIME);
+        printf(GREEN_BG "#" RESET);
+    }
+
+    for (int i = LOADING_BAR; i > 0; i--)
+        printf("\b");
+    
+    for (int i = LOADING_BAR; i > 0; i--)
+        printf("\b");
+
+    for (int i = LOADING_BAR / 2 - 2; i > 0; i--)
+        printf(GREEN_BG " " );
+
+    printf("DONE");
+
+    for (int i = LOADING_BAR / 2 - 2; i > 0; i--)
+        printf(" ");
+
+    printf(RESET "\n\n");
+};
+
 void coef_input(double* coef_a, double* coef_b, double* coef_c) {
 
         /*checking function*/
@@ -188,6 +220,8 @@ int user_interface(double coef_a, double coef_b, double coef_c) {
     else
         return USER;
 }
+
+
 
     /*clean_buffer: cleans input buffer*/
 

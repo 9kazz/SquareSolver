@@ -2,6 +2,7 @@
 #include <math.h>
 #include <assert.h>
 #include <limits.h>
+#include <windows.h>
 
 #include "math_ops.h"
 #include "utils.h"
@@ -23,7 +24,9 @@ int main(int argc, char* argv[]) {
         utest_main_file(file_name);
     }
 
-    else if (reading_status == COEFFICIENTS) {                                                                             
+    else if (reading_status == COEFFICIENTS) { 
+        pseudo_loading();             
+
         general_solve(coef_a,  coef_b, coef_c,
                       &ans_x1, &ans_x2, 
                       &nRoots);

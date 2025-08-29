@@ -1,6 +1,8 @@
 #ifndef UTILS_H
 #define UTILS_H
 
+#include <windows.h>
+
 /*functions*/
 
 int terminal_input (int argc,       char* argv[],
@@ -15,6 +17,8 @@ int run_oper (int oper,
               int* i);
 
 int identify_oper (char* point_arg);
+
+void pseudo_loading(void);
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //! Считывает значение коэффициентов уравнения, введенных пользователем
