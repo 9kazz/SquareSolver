@@ -14,3 +14,4 @@ How to use:
     1) "-c" to solve your equation. After "-c" you should print coefficients of your equation (like this: "-c 1 2 1"
     2) "-t" and then "-f *name of your testing file*" to run unit-testing of the program
 NOTE: you must print CL flags according the example: "-c 1 2 1" or "-t -f *file name*"
+
