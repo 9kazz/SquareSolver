@@ -11,6 +11,10 @@ If you:
 3) are unbelievably lazy to solve a quadratic equation 🥱
 ```
 
+## How to build 🚀
+```
+Just print "make" in console)
+```
 ## Files included in program 📁
 ```
 1) main.cpp

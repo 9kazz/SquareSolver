@@ -35,10 +35,11 @@ int main(int argc, char* argv[]) {
                     ans_x1, ans_x2);
     }
 
-    else
+    else {
         printf(RED "Incorrect terminal operations :(\n" RESET);
+    }
 
-printf(GREEN "\nCOMMIT GIT HUB" RESET);                                                 // testing & notification
+    printf(GREEN "\nCOMMIT GIT HUB" RESET);                                                 // testing & notification
 
-return 0;
+    return 0;
 }

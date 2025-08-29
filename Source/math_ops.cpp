@@ -65,14 +65,15 @@ int solve_quadr(double coef_a,  double coef_b, double coef_c,
         /*checking function*/
 
     assert(isfinite(coef_a)),  assert(isfinite(coef_b)), assert(isfinite(coef_c));
+    assert(double_zero_compare(coef_a) != 0);
     assert(ans_x1 != NULL),    assert(ans_x2 != NULL);
     assert(ans_x1 != ans_x2);
     assert(isfinite(*ans_x1)), assert(isfinite(*ans_x2));
 
     double discr = coef_b * coef_b - 4 * coef_a * coef_c;
-    double sqrt_discr = sqrt(discr);
 
     if (double_zero_compare(discr) > 0) {        // discr > 0
+        double sqrt_discr = sqrt(discr);
         *ans_x1 = (-coef_b - sqrt_discr) / (2 * coef_a);
         *ans_x2 = (-coef_b + sqrt_discr) / (2 * coef_a);
         return TWO_ROOTS;
